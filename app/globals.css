@@ -1,0 +1,63 @@
+/* Import Tailwind's base, component, and utility styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+Global CSS variables for light mode 
+These variables define colors, spacing, and other UI-related properties
+*/
+:root {
+    --background: 0 0% 100%; /* White background */
+    --foreground: 0 0% 3.9%; /* Dark text color */
+    --primary: 0 0% 9%; /* Primary color for elements */
+    --primary-foreground: 0 0% 98%; /* Text color on primary elements */
+    --muted: 0 0% 96.1%; /* Muted background color */
+    --muted-foreground: 0 0% 45.1%; /* Muted text color */
+    --accent: 0 0% 96.1%; /* Accent background color */
+    --accent-foreground: 0 0% 9%; /* Accent text color */
+    --border: 0 0% 89.8%; /* Border color */
+    --input: 0 0% 89.8%; /* Input field border color */
+    --ring: 0 0% 3.9%; /* Focus ring color */
+    --radius: 0.5rem; /* Border radius for rounded elements */
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+/* 
+Dark mode styles 
+Applied when an element (usually <html>) has the 'dark' class
+*/
+.dark {
+    --background: 0 0% 3.9%; /* Dark background */
+    --foreground: 0 0% 98%; /* Light text color */
+    --primary: 0 0% 98%; /* Primary color in dark mode */
+    --primary-foreground: 0 0% 9%; /* Text color on primary elements */
+    --muted: 0 0% 14.9%; /* Muted background color */
+    --muted-foreground: 0 0% 63.9%; /* Muted text color */
+    --accent: 0 0% 14.9%; /* Accent background color */
+    --accent-foreground: 0 0% 98%; /* Accent text color */
+    --border: 0 0% 14.9%; /* Border color */
+    --input: 0 0% 14.9%; /* Input field border color */
+    --ring: 0 0% 83.1%; /* Focus ring color */
+}
+
+/* 
+Base styles using Tailwind's @layer directive 
+These styles apply globally across the project
+*/
+@layer base {
+    /* Apply border color to all elements */
+    * {
+        @apply border-border;
+    }
+
+    /* Apply background and text color to the body */
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    /* Custom styling for text selection */
+    ::selection {
+        @apply bg-foreground text-background;
+    }
+}
